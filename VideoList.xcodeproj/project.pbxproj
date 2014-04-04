@@ -19,6 +19,17 @@
 		926B328418EF20F000AAD137 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 926B326C18EF20F000AAD137 /* UIKit.framework */; };
 		926B328C18EF20F000AAD137 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 926B328A18EF20F000AAD137 /* InfoPlist.strings */; };
 		926B328E18EF20F000AAD137 /* VideoListTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 926B328D18EF20F000AAD137 /* VideoListTests.m */; };
+		926B32A218EF21BA00AAD137 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 926B329918EF21BA00AAD137 /* ViewController.m */; };
+		926B32A318EF21BA00AAD137 /* VideoListDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 926B329B18EF21BA00AAD137 /* VideoListDelegate.m */; };
+		926B32A418EF21BA00AAD137 /* VideoListCellDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 926B329D18EF21BA00AAD137 /* VideoListCellDelegate.m */; };
+		926B32A518EF21BA00AAD137 /* VideoListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 926B329F18EF21BA00AAD137 /* VideoListCell.m */; };
+		926B32A618EF21BA00AAD137 /* VideoListCellContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 926B32A118EF21BA00AAD137 /* VideoListCellContent.m */; };
+		926B32A818EF21D000AAD137 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 926B32A718EF21D000AAD137 /* Main.storyboard */; };
+		926B32AB18EF21E000AAD137 /* MCSwipeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 926B32AA18EF21E000AAD137 /* MCSwipeTableViewCell.m */; };
+		926B32B318EF222A00AAD137 /* check.png in Resources */ = {isa = PBXBuildFile; fileRef = 926B32AF18EF222A00AAD137 /* check.png */; };
+		926B32B418EF222A00AAD137 /* check@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 926B32B018EF222A00AAD137 /* check@2x.png */; };
+		926B32B518EF222A00AAD137 /* cross.png in Resources */ = {isa = PBXBuildFile; fileRef = 926B32B118EF222A00AAD137 /* cross.png */; };
+		926B32B618EF222A00AAD137 /* cross@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 926B32B218EF222A00AAD137 /* cross@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +59,23 @@
 		926B328918EF20F000AAD137 /* VideoListTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "VideoListTests-Info.plist"; sourceTree = "<group>"; };
 		926B328B18EF20F000AAD137 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		926B328D18EF20F000AAD137 /* VideoListTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoListTests.m; sourceTree = "<group>"; };
+		926B329818EF21BA00AAD137 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		926B329918EF21BA00AAD137 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		926B329A18EF21BA00AAD137 /* VideoListDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoListDelegate.h; sourceTree = "<group>"; };
+		926B329B18EF21BA00AAD137 /* VideoListDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoListDelegate.m; sourceTree = "<group>"; };
+		926B329C18EF21BA00AAD137 /* VideoListCellDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoListCellDelegate.h; sourceTree = "<group>"; };
+		926B329D18EF21BA00AAD137 /* VideoListCellDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoListCellDelegate.m; sourceTree = "<group>"; };
+		926B329E18EF21BA00AAD137 /* VideoListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoListCell.h; sourceTree = "<group>"; };
+		926B329F18EF21BA00AAD137 /* VideoListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoListCell.m; sourceTree = "<group>"; };
+		926B32A018EF21BA00AAD137 /* VideoListCellContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoListCellContent.h; sourceTree = "<group>"; };
+		926B32A118EF21BA00AAD137 /* VideoListCellContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoListCellContent.m; sourceTree = "<group>"; };
+		926B32A718EF21D000AAD137 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		926B32A918EF21E000AAD137 /* MCSwipeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCSwipeTableViewCell.h; sourceTree = "<group>"; };
+		926B32AA18EF21E000AAD137 /* MCSwipeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCSwipeTableViewCell.m; sourceTree = "<group>"; };
+		926B32AF18EF222A00AAD137 /* check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = check.png; sourceTree = "<group>"; };
+		926B32B018EF222A00AAD137 /* check@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "check@2x.png"; sourceTree = "<group>"; };
+		926B32B118EF222A00AAD137 /* cross.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cross.png; sourceTree = "<group>"; };
+		926B32B218EF222A00AAD137 /* cross@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cross@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,8 +135,9 @@
 		926B326E18EF20F000AAD137 /* VideoList */ = {
 			isa = PBXGroup;
 			children = (
-				926B327718EF20F000AAD137 /* AppDelegate.h */,
-				926B327818EF20F000AAD137 /* AppDelegate.m */,
+				926B32A718EF21D000AAD137 /* Main.storyboard */,
+				926B32AD18EF221500AAD137 /* Resources */,
+				926B329718EF213800AAD137 /* Classes */,
 				926B327A18EF20F000AAD137 /* Images.xcassets */,
 				926B326F18EF20F000AAD137 /* Supporting Files */,
 			);
@@ -142,6 +171,54 @@
 				926B328A18EF20F000AAD137 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		926B329718EF213800AAD137 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				926B327718EF20F000AAD137 /* AppDelegate.h */,
+				926B327818EF20F000AAD137 /* AppDelegate.m */,
+				926B329818EF21BA00AAD137 /* ViewController.h */,
+				926B329918EF21BA00AAD137 /* ViewController.m */,
+				926B329A18EF21BA00AAD137 /* VideoListDelegate.h */,
+				926B329B18EF21BA00AAD137 /* VideoListDelegate.m */,
+				926B329C18EF21BA00AAD137 /* VideoListCellDelegate.h */,
+				926B329D18EF21BA00AAD137 /* VideoListCellDelegate.m */,
+				926B329E18EF21BA00AAD137 /* VideoListCell.h */,
+				926B329F18EF21BA00AAD137 /* VideoListCell.m */,
+				926B32A018EF21BA00AAD137 /* VideoListCellContent.h */,
+				926B32A118EF21BA00AAD137 /* VideoListCellContent.m */,
+				926B32AC18EF21E900AAD137 /* ThirdParty */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		926B32AC18EF21E900AAD137 /* ThirdParty */ = {
+			isa = PBXGroup;
+			children = (
+				926B32A918EF21E000AAD137 /* MCSwipeTableViewCell.h */,
+				926B32AA18EF21E000AAD137 /* MCSwipeTableViewCell.m */,
+			);
+			name = ThirdParty;
+			sourceTree = "<group>";
+		};
+		926B32AD18EF221500AAD137 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				926B32AE18EF221B00AAD137 /* Images */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		926B32AE18EF221B00AAD137 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				926B32AF18EF222A00AAD137 /* check.png */,
+				926B32B018EF222A00AAD137 /* check@2x.png */,
+				926B32B118EF222A00AAD137 /* cross.png */,
+				926B32B218EF222A00AAD137 /* cross@2x.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,7 +296,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				926B32B518EF222A00AAD137 /* cross.png in Resources */,
+				926B32B418EF222A00AAD137 /* check@2x.png in Resources */,
+				926B32A818EF21D000AAD137 /* Main.storyboard in Resources */,
 				926B327318EF20F000AAD137 /* InfoPlist.strings in Resources */,
+				926B32B618EF222A00AAD137 /* cross@2x.png in Resources */,
+				926B32B318EF222A00AAD137 /* check.png in Resources */,
 				926B327B18EF20F000AAD137 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -239,6 +321,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				926B32A618EF21BA00AAD137 /* VideoListCellContent.m in Sources */,
+				926B32A418EF21BA00AAD137 /* VideoListCellDelegate.m in Sources */,
+				926B32A318EF21BA00AAD137 /* VideoListDelegate.m in Sources */,
+				926B32A218EF21BA00AAD137 /* ViewController.m in Sources */,
+				926B32AB18EF21E000AAD137 /* MCSwipeTableViewCell.m in Sources */,
+				926B32A518EF21BA00AAD137 /* VideoListCell.m in Sources */,
 				926B327918EF20F000AAD137 /* AppDelegate.m in Sources */,
 				926B327518EF20F000AAD137 /* main.m in Sources */,
 			);
@@ -439,6 +527,7 @@
 				926B329318EF20F000AAD137 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		926B329418EF20F000AAD137 /* Build configuration list for PBXNativeTarget "VideoListTests" */ = {
 			isa = XCConfigurationList;
@@ -447,6 +536,7 @@
 				926B329618EF20F000AAD137 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
