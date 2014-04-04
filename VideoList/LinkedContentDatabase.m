@@ -66,7 +66,7 @@
         
         [linkedContentsFound addObject:linkedContent];
         
-        [linkedContent release];
+        //[linkedContent release];
         
         /*
         NSLog(@"packageID: %@",object[@"packageID"]);

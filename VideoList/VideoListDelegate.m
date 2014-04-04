@@ -39,6 +39,34 @@
     return self;
 }
 
+- (id)initWithMode: (int)mode
+{
+    self = [self init];
+    
+    switch (mode) {
+        case 1:
+            NSLog(@"Loading VideoList table with videos from Parse");
+            
+            //to include here the initialization of the Parse model that will retrieve the data to be loaded in the table
+            
+            break;
+            
+        case 2:
+            NSLog(@"Loading VideoList table with videos from YouTube");
+            
+            //to include here the initialization of the YouTube model that will retrieve the data to be loaded in the table
+            
+            break;
+            
+        default:
+            NSLog(@"No starting mode selected. VideoList will be empty");
+            break;
+    }
+    
+    return self;
+}
+
+
 /*
 - (id)initWithImageView:(UIImageView *)imageView title:(UILabel *)title description:(UILabel *)description duration:(UILabel *)duration
 {

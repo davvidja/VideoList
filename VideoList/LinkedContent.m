@@ -29,6 +29,7 @@
 
 
 - (void)dealloc {
+    /*
 	[m_packageID release];
 	[m_ISBN release];
 	[m_packageModificationDate release];
@@ -36,6 +37,7 @@
 	[m_youTubeVideoID release];
 	[m_mediaType release];
     [super dealloc];
+     */
 }
 
 /*
@@ -75,18 +77,18 @@
 		idRef == nil ||
 		idRef.length == 0)
 	{
-		[self release];
+		//[self release];
 		return nil;
 	}
 
 	if (self = [super init]) {
-		m_packageID = [packageID retain];
-		m_ISBN = [ISBN retain];
-		m_packageModificationDate = [packageModificationDate retain];
-		m_linkedContentCFI = [linkedContentCFI retain];
-		m_idRef = [idRef retain];
-		m_youTubeVideoID = [youTubeVideoID retain];
-		m_mediaType = [mediaType retain];
+		m_packageID = packageID;
+		m_ISBN = ISBN;
+		m_packageModificationDate = packageModificationDate;
+		m_linkedContentCFI = linkedContentCFI;
+		m_idRef = idRef;
+		m_youTubeVideoID = youTubeVideoID;
+		m_mediaType = mediaType;
 	}
 
 	return self;

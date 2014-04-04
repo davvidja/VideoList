@@ -20,4 +20,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *durationLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *videoThumbnailImageView;
 */
+- (IBAction)YouTube:(id)sender;
+- (IBAction)Parse:(id)sender;
 @end

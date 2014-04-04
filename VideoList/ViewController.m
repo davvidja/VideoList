@@ -22,10 +22,12 @@
 {
     [super viewDidLoad];
     
-    self.videoListDelegate = [[VideoListDelegate alloc] init];
+    /*
+    self.videoListDelegate = [[VideoListDelegate alloc] initWithMode:1];
     
     [self.videoListTable setDelegate: self.videoListDelegate];
     [self.videoListTable setDataSource:self.videoListDelegate];
+     */
 }
 
 - (void)didReceiveMemoryWarning
@@ -34,4 +36,24 @@
 }
 
 
+- (IBAction)YouTube:(id)sender {
+    self.videoListDelegate = [[VideoListDelegate alloc] initWithMode:2];
+    
+    [self.videoListTable setDelegate: self.videoListDelegate];
+    [self.videoListTable setDataSource:self.videoListDelegate];
+    
+    NSLog(@"View: %@", [self.view.subviews[0] restorationIdentifier]);
+    
+    [self.view.subviews[0] reloadData];
+}
+
+- (IBAction)Parse:(id)sender {
+    self.videoListDelegate = [[VideoListDelegate alloc] initWithMode:1];
+    
+    [self.videoListTable setDelegate: self.videoListDelegate];
+    [self.videoListTable setDataSource:self.videoListDelegate];
+    
+    [self.view.subviews[0] reloadData];
+
+}
 @end

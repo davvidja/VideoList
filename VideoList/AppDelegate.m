@@ -13,6 +13,16 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+    //The following 2 lines are intended to setup the app to work with Parse.
+    [Parse setApplicationId:@"dJmqxU1k0b8BgzDHA5pibwOXaNVZ9H0sFhsHYiC6"
+                  clientKey:@"S2p0be1qwscmOeCmomN7ZSKi4Qe7xXZDRt8nOvGO"];
+    
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    
+    NSLog (@"Parse initialized");
+    
+    
     return YES;
 }
 
