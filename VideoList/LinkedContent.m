@@ -17,7 +17,7 @@
 
 @implementation LinkedContent
 
-
+@synthesize objectID = m_objectID;
 @synthesize packageID = m_packageID;
 @synthesize ISBN = m_ISBN;
 @synthesize packageModificationDate = m_packageModificationDate;
@@ -25,20 +25,11 @@
 @synthesize idRef = m_idRef;
 @synthesize youTubeVideoID = m_youTubeVideoID;
 @synthesize mediaType = m_mediaType;
-
-
-
-- (void)dealloc {
-    /*
-	[m_packageID release];
-	[m_ISBN release];
-	[m_packageModificationDate release];
-	[m_linkedContentCFI release];
-	[m_youTubeVideoID release];
-	[m_mediaType release];
-    [super dealloc];
-     */
-}
+@synthesize contentAuthor = m_contentAuthor;
+@synthesize contentDuration = m_contentDuration;
+@synthesize contentThumbNailURL = m_contentThumbNailURL;
+@synthesize contentTitle = m_contentTitle;
+@synthesize likeStatus = m_likeStatus;
 
 /*
 // Assesing if this method should be dropped
@@ -64,7 +55,7 @@
 */
 
 - (id)
-    initWithPackageID:(NSString *)packageID
+    initWithObjectID:(NSString *) objectID packageID:(NSString *)packageID
     ISBN:(NSString *)ISBN
     packageModificationDate:(NSString *)packageModificationDate
     linkedContentCFI:(NSString *)linkedContentCFI
@@ -82,6 +73,7 @@
 	}
 
 	if (self = [super init]) {
+        m_objectID = objectID;
 		m_packageID = packageID;
 		m_ISBN = ISBN;
 		m_packageModificationDate = packageModificationDate;
@@ -89,6 +81,7 @@
 		m_idRef = idRef;
 		m_youTubeVideoID = youTubeVideoID;
 		m_mediaType = mediaType;
+        m_likeStatus = 0; //by default the like status is not defined. It should be set by the actions of the user.
 	}
 
 	return self;

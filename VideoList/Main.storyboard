@@ -53,11 +53,16 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y99-1q-EUE">
+                                                    <rect key="frame" x="352" y="0.0" width="32" height="32"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="authorLabel" destination="dp1-fv-3RB" id="NBs-BF-lq2"/>
                                             <outlet property="durationLabel" destination="frr-vT-pBL" id="A0B-ev-04s"/>
+                                            <outlet property="linkedContentSignActionMade" destination="y99-1q-EUE" id="7zg-vQ-Cgs"/>
                                             <outlet property="titleLabel" destination="gse-XF-J49" id="oog-Jc-b0A"/>
                                             <outlet property="videoThumbnailView" destination="Por-an-sWF" id="Yy1-2Z-AJN"/>
                                         </connections>

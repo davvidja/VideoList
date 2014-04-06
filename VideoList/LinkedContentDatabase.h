@@ -15,6 +15,8 @@
 - (NSInteger)countSyncLinkedContentsForPackageID: (NSString *)packageID;
 - (void)countAsyncLinkedContentsForPackageID: (NSString *)packageID count: (NSInteger *) countLinkedContents;
 - (void)LinkedContentsForPackageID: (NSString *)packageID linkedContents: (NSMutableArray *)linkedContentsFound;
+- (void)updateRatingBalanceForObjectID: (NSString *)objectID rating: (int)rating;
+- (void)addingDataFromTheSourceToLinkedContents: (NSMutableArray *)linkedContents;
 + (LinkedContentDatabase *)shared;
 
 @end

@@ -18,6 +18,8 @@
 @synthesize videoListCellContent;
 @synthesize titleLabel, descriptionLabel, durationLabel;
 @synthesize videoThumbnailImageView;
+@synthesize linkedContentList = m_linkedContentList;
+@synthesize packageID;
 
 
 - (id)init
@@ -26,15 +28,7 @@
     
     self.videoListCellDelegate = [[VideoListCellDelegate alloc] init];
     
-    id path = @"https://i1.ytimg.com/vi/g_d5R6Il0II/mqdefault.jpg";
-    id title = @"Apple ad 1984";
-    id author = @"Read-different team";
-    id duration = @"1:00";
-    
-    self.videoListCellContent = [[VideoListCellContent alloc] initWithVideoURL:path title:title author:author duration:duration];
-    
-    //[self.videoListTable setDelegate:self];
-    //[self.videoListTable setDataSource:self];
+    //self.videoListCellContent = [[VideoListCellContent alloc] initWithVideoURL:path title:title author:author duration:duration];
     
     return self;
 }
@@ -47,7 +41,16 @@
         case 1:
             NSLog(@"Loading VideoList table with videos from Parse");
             
+            self.linkedContentList = [[NSMutableArray alloc] init];
+            
             //to include here the initialization of the Parse model that will retrieve the data to be loaded in the table
+            self.packageID = @"code.google.com.epub-samples.moby-dick-basic";
+            [[LinkedContentDatabase shared] LinkedContentsForPackageID:packageID linkedContents:m_linkedContentList];
+            
+            NSLog(@"Number of elements retrieved: %d",[self.linkedContentList count]);
+            
+            [[LinkedContentDatabase shared] addingDataFromTheSourceToLinkedContents:m_linkedContentList];
+            
             
             break;
             
@@ -94,7 +97,7 @@
 {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 6;
+    return [self.linkedContentList count];
 }
 
 
@@ -182,25 +185,65 @@
     // Setting the default inactive state color to the tableView background color
     //[cell setDefaultColor:self.tableView.backgroundView.backgroundColor];
     
-    
-#warning Here it is the place where I found a bug that I was not able to solved
-    //[cell setDelegate:self];
+ 
     [cell setDelegate:self.videoListCellDelegate];
     
-    cell.titleLabel.text = videoListCellContent.title;
-    cell.authorLabel.text = videoListCellContent.author;
-    cell.durationLabel.text = videoListCellContent.duration;
-    cell.videoThumbnailView.image = videoListCellContent.videoThumbnailImage;
+    if (indexPath.row <= (self.linkedContentList.count-1)) {
     
-    
-    [cell setSwipeGestureWithView:checkView color:greenColor mode:MCSwipeTableViewCellModeSwitch state:MCSwipeTableViewCellState1 completionBlock:^(MCSwipeTableViewCell *cell, MCSwipeTableViewCellState state, MCSwipeTableViewCellMode mode) {
-        NSLog(@"Did swipe \"Checkmark\" cell");
-    }];
-    
-    
-    [cell setSwipeGestureWithView:crossView color:redColor mode:MCSwipeTableViewCellModeSwitch state:MCSwipeTableViewCellState3 completionBlock:^(MCSwipeTableViewCell *cell, MCSwipeTableViewCellState state, MCSwipeTableViewCellMode mode) {
-        NSLog(@"Did swipe \"Cross\" cell");
-    }];
+        
+        #warning the model providing data to the table should have been evolved in order to treat registers with other media types, to avoid blank cells in the TableView
+        LinkedContent *linkedContent = self.linkedContentList[indexPath.row];
+        
+        
+        if ([linkedContent.mediaType isEqual:@"video"]) {
+                
+            self.videoListCellContent = [[VideoListCellContent alloc] initWithVideoURL:linkedContent.contentThumbNailURL title:linkedContent.contentTitle author:linkedContent.contentAuthor duration:linkedContent.contentDuration];
+            
+            cell.titleLabel.text = self.videoListCellContent.title;
+            cell.authorLabel.text = self.videoListCellContent.author;
+            cell.durationLabel.text = self.videoListCellContent.duration;
+
+            cell.videoThumbnailView.image = self.videoListCellContent.videoThumbnailImage;
+            
+            if (linkedContent.likeStatus == 2) {
+                NSLog(@"Setting the dislike apparience of the cell when the cell is being created");
+                [self.videoListCellDelegate setDislikeModeToCell:cell withCellContent: self.videoListCellContent];
+            }
+
+            
+            //------------------------------------------------
+            //User likes the content -> setting the actions
+            //
+            [cell setSwipeGestureWithView:checkView color:greenColor mode:MCSwipeTableViewCellModeSwitch state:MCSwipeTableViewCellState1 completionBlock:^ (MCSwipeTableViewCell *cell, MCSwipeTableViewCellState state, MCSwipeTableViewCellMode mode) {
+            #warning To include here the functionality needed when a linkedContent is wanted by user.
+                NSLog(@"Did swipe \"Checkmark\" cell");
+                
+                if (linkedContent.likeStatus != 1) {
+                    linkedContent.likeStatus = 1;
+                    
+                    [(VideoListCellDelegate *)((VideoListCell *)cell.delegate) setLikeModeToCell: (VideoListCell *)cell withCellContent:self.videoListCellContent];
+                    
+                    [[LinkedContentDatabase shared] updateRatingBalanceForObjectID:linkedContent.objectID rating:1];
+                }
+            }];
+            
+            //------------------------------------------------
+            //User dislikes the content -> setting the actions
+            //
+            [cell setSwipeGestureWithView:crossView color:redColor mode:MCSwipeTableViewCellModeSwitch state:MCSwipeTableViewCellState3 completionBlock:^(MCSwipeTableViewCell *cell, MCSwipeTableViewCellState state, MCSwipeTableViewCellMode mode) {
+            #warning To include here the functionality needed when a linkedContent is disliked by user.
+                NSLog(@"Did swipe \"Cross\" cell");
+                
+                if (linkedContent.likeStatus != 2) {
+                    linkedContent.likeStatus = 2;
+                
+                    [(VideoListCellDelegate *)((VideoListCell *)cell.delegate) setDislikeModeToCell: (VideoListCell *)cell withCellContent:self.videoListCellContent];
+                
+                    [[LinkedContentDatabase shared] updateRatingBalanceForObjectID:linkedContent.objectID rating:-1];
+                }
+            }];
+        }
+    }
     
 }
 

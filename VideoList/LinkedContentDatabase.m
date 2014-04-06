@@ -48,9 +48,9 @@
     LinkedContent *linkedContent;
     //NSArray *linkedContentsFound;
     
-    NSLog(@">>> LinkedContentsForPackageID: %@", packageID);
+    NSLog(@"PARSE: LinkedContentsForPackageID: %@", packageID);
 
-    
+#warning The name of the class rdLinkedContents should be store in a static constant to be used whereever it could be needed.
     PFQuery *query = [PFQuery queryWithClassName:@"rdLinkedContents"];
     [query whereKey:@"packageID" equalTo:packageID];
     
@@ -62,10 +62,10 @@
         
         NSLog(@"%@", object);
         
-        linkedContent = [[LinkedContent alloc]initWithPackageID:object[@"packageID"] ISBN:object[@"ISBN"] packageModificationDate:object[@"packageModificationDate"] linkedContentCFI:object[@"linkedContentCFI"] idRef:object[@"publicationResourceRelativeIRI"] youTubeVideoID:object[@"youTubeVideoID"] mediaType:object[@"mediaType"]];
+        linkedContent = [[LinkedContent alloc]initWithObjectID:object.objectId packageID:object[@"packageID"] ISBN:object[@"ISBN"] packageModificationDate:object[@"packageModificationDate"] linkedContentCFI:object[@"linkedContentCFI"] idRef:object[@"publicationResourceRelativeIRI"] youTubeVideoID:object[@"youTubeVideoID"] mediaType:object[@"mediaType"]];
         
         [linkedContentsFound addObject:linkedContent];
-        
+                
         //[linkedContent release];
         
         /*
@@ -78,35 +78,30 @@
         NSLog(@"mediaType: %@",object[@"mediaType"]);
         */
         
-        NSLog(@">>> Exiting LinkedContentsForPackageID");
+        NSLog(@"PARSE: Exiting LinkedContentsForPackageID");
 
     }
+}
+
+- (void)updateRatingBalanceForObjectID: (NSString *)objectID rating: (int)rating{
     
-    
-    /*
-    __block NSInteger auxVariable;
-    
-    NSError *error;
+    NSLog(@"PARSE: updateRatingBalanceForObjectID");
+
     
     PFQuery *query = [PFQuery queryWithClassName:@"rdLinkedContents"];
-    [query whereKey:@"packageID" equalTo:packageID];
-    
-    //[query countObjects:(& error)];
-    
-    [query countObjectsInBackgroundWithBlock:(PFIntegerResultBlock)^(int count, NSError *error) {
-        //auxVariable = count;
-        if (!error) {
-            // The count request succeeded. Log the count
-            NSLog(@"Package ID %@-> Number of linked contents %d games", packageID, count);
-            *countLinkedContents = count;
-        } else {
-            NSLog(@"Package ID %@-> Error %@", packageID, error);
-            *countLinkedContents = 0;
-        }
+    [query getObjectInBackgroundWithId:objectID block:^(PFObject *object, NSError *error) {
+        // Do something with the returned PFObject in the gameScore variable.
+        NSInteger actualRatingBalance = [object[@"ratingBalance"] intValue];
+        NSLog(@"PARSE: actualRatingBalance= %d", actualRatingBalance);
+        
+        actualRatingBalance = actualRatingBalance + rating;
+        
+        NSLog(@"PARSE: newRatingBalance= %d", actualRatingBalance);
+        
+        object[@"ratingBalance"] = @(actualRatingBalance);
+        
+        [object saveInBackground];
     }];
-    
-    NSLog(@"Number of linked contents returned: %d", *countLinkedContents);
-    */
 }
 
 
@@ -158,6 +153,19 @@
     return countLinkedContents;
 }
 
-
+- (void) addingDataFromTheSourceToLinkedContents:(NSMutableArray *)linkedContents {
+    
+    for (LinkedContent *linkedContent in linkedContents) {
+#warning instead of setting fixed values to the linkedContent objects, it has to be called the model that interacts with the youtube API in order to retrieve this information
+        
+        if  ([linkedContent.mediaType isEqual:@"video"]) {
+            linkedContent.contentAuthor = @"Read-different team";
+            linkedContent.contentTitle = @"Apple ad 1984";
+            linkedContent.contentDuration = @"1:00";
+            linkedContent.contentThumbNailURL = @"https://i1.ytimg.com/vi/g_d5R6Il0II/mqdefault.jpg";
+        }
+   }
+    
+}
 
 @end

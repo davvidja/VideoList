@@ -14,5 +14,7 @@
 @property (nonatomic, weak) IBOutlet UILabel *titleLabel;
 @property (nonatomic, weak) IBOutlet UILabel *authorLabel;
 @property (nonatomic, weak) IBOutlet UILabel *durationLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *linkedContentSignActionMade;
+
 
 @end

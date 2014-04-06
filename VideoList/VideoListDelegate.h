@@ -9,13 +9,14 @@
 #import <UIKit/UIKit.h>
 #import "VideoListCellDelegate.h"
 #import "VideoListCellContent.h"
+#import "VideoListCell.h"
 
 #import "LinkedContent.h"
 #import "LinkedContentDatabase.h"
 
 @interface VideoListDelegate : NSObject <UITableViewDelegate , UITableViewDataSource, UIAlertViewDelegate>
 {
-    	@private NSMutableArray *m_linkedContents;
+    	@private NSMutableArray *m_linkedContentList;
 }
 
 @property VideoListCellDelegate *videoListCellDelegate;
@@ -25,6 +26,8 @@
 @property UILabel *descriptionLabel;
 @property UILabel *durationLabel;
 @property UIImageView *videoThumbnailImageView;
+@property NSMutableArray *linkedContentList;
+@property NSString *packageID;
 
 //- (id) initWithImageView: (UIImageView *)imageView title:(UILabel *)title description:(UILabel *)description duration:(UILabel *)duration;
 

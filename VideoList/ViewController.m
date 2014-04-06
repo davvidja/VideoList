@@ -50,6 +50,8 @@
 - (IBAction)Parse:(id)sender {
     self.videoListDelegate = [[VideoListDelegate alloc] initWithMode:1];
     
+    self.videoListDelegate.packageID = @"code.google.com.epub-samples.moby-dick-basic";
+    
     [self.videoListTable setDelegate: self.videoListDelegate];
     [self.videoListTable setDataSource:self.videoListDelegate];
     
