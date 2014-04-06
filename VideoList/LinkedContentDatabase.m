@@ -52,6 +52,7 @@
 
 #warning The name of the class rdLinkedContents should be store in a static constant to be used whereever it could be needed.
     PFQuery *query = [PFQuery queryWithClassName:@"rdLinkedContents"];
+    [query orderByDescending:@"ratingBalance"];
     [query whereKey:@"packageID" equalTo:packageID];
     
     parseRecordsFound =[query findObjects: &error];
@@ -62,7 +63,7 @@
         
         NSLog(@"%@", object);
         
-        linkedContent = [[LinkedContent alloc]initWithObjectID:object.objectId packageID:object[@"packageID"] ISBN:object[@"ISBN"] packageModificationDate:object[@"packageModificationDate"] linkedContentCFI:object[@"linkedContentCFI"] idRef:object[@"publicationResourceRelativeIRI"] youTubeVideoID:object[@"youTubeVideoID"] mediaType:object[@"mediaType"]];
+        linkedContent = [[LinkedContent alloc]initWithObjectID:object.objectId packageID:object[@"packageID"] ISBN:object[@"ISBN"] packageModificationDate:object[@"packageModificationDate"] linkedContentCFI:object[@"linkedContentCFI"] idRef:object[@"publicationResourceRelativeIRI"] youTubeVideoID:object[@"youTubeVideoID"] mediaType:object[@"mediaType"] ratingBalance:[object[@"ratingBalance"] intValue]];
         
         [linkedContentsFound addObject:linkedContent];
                 

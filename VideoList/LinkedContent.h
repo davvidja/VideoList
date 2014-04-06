@@ -20,6 +20,7 @@
 @private NSString *m_contentTitle;
 @private NSString *m_contentAuthor;
 @private NSString *m_contentDuration;
+@private int m_ratingBalance;
     
     /*
      *This variable will have 3 possible values
@@ -46,6 +47,7 @@
 @property NSString *contentAuthor;
 @property NSString *contentDuration;
 @property int likeStatus;
+@property int ratingBalance;
 
 
 - (id)
@@ -55,7 +57,8 @@ initWithObjectID:(NSString *) objectID packageID:(NSString *)packageID
 	linkedContentCFI:(NSString *)linkedContentCFI
     idRef:(NSString *)idRef
     youTubeVideoID:(NSString *)youTubeVideoID
-    mediaType:(NSString *)mediaType;
+    mediaType:(NSString *)mediaType
+ratingBalance: (int)ratingBalance;
 
 //- (id)initWithDictionary:(NSDictionary *)dictionary;
 //- (BOOL)isEqualToLinkedContent:(LinkedContent *)linkedContent;

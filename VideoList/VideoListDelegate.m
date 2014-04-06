@@ -202,6 +202,7 @@
             cell.titleLabel.text = self.videoListCellContent.title;
             cell.authorLabel.text = self.videoListCellContent.author;
             cell.durationLabel.text = self.videoListCellContent.duration;
+            cell.ratingLabel.text = [NSString stringWithFormat:@"%d", linkedContent.ratingBalance];
 
             cell.videoThumbnailView.image = self.videoListCellContent.videoThumbnailImage;
             

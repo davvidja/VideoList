@@ -10,8 +10,8 @@
 
 @implementation VideoListCell
 
-@synthesize videoThumbnailView;
-@synthesize titleLabel, authorLabel, durationLabel;
+@synthesize videoThumbnailView, linkedContentSignActionMade;
+@synthesize titleLabel, authorLabel, durationLabel, ratingLabel;
 
 - (id)initWithFrame:(CGRect)frame
 {

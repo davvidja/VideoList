@@ -30,6 +30,7 @@
 @synthesize contentThumbNailURL = m_contentThumbNailURL;
 @synthesize contentTitle = m_contentTitle;
 @synthesize likeStatus = m_likeStatus;
+@synthesize ratingBalance = m_ratingBalance;
 
 /*
 // Assesing if this method should be dropped
@@ -61,7 +62,8 @@
     linkedContentCFI:(NSString *)linkedContentCFI
     idRef:(NSString *)idRef
     youTubeVideoID:(NSString *)youTubeVideoID
-    mediaType:(NSString *)mediaType;
+    mediaType:(NSString *)mediaType
+ratingBalance: (int)ratingBalance;
 {
 	if (linkedContentCFI == nil ||
 		linkedContentCFI.length == 0 ||
@@ -82,6 +84,7 @@
 		m_youTubeVideoID = youTubeVideoID;
 		m_mediaType = mediaType;
         m_likeStatus = 0; //by default the like status is not defined. It should be set by the actions of the user.
+        m_ratingBalance = ratingBalance;
 	}
 
 	return self;

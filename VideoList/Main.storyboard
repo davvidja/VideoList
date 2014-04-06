@@ -57,12 +57,20 @@
                                                     <rect key="frame" x="352" y="0.0" width="32" height="32"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rating" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xou-fq-tVn">
+                                                    <rect key="frame" x="10" y="5" width="50" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="authorLabel" destination="dp1-fv-3RB" id="NBs-BF-lq2"/>
                                             <outlet property="durationLabel" destination="frr-vT-pBL" id="A0B-ev-04s"/>
                                             <outlet property="linkedContentSignActionMade" destination="y99-1q-EUE" id="7zg-vQ-Cgs"/>
+                                            <outlet property="ratingLabel" destination="Xou-fq-tVn" id="jCI-MJ-Bpy"/>
                                             <outlet property="titleLabel" destination="gse-XF-J49" id="oog-Jc-b0A"/>
                                             <outlet property="videoThumbnailView" destination="Por-an-sWF" id="Yy1-2Z-AJN"/>
                                         </connections>
