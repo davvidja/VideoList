@@ -15,12 +15,18 @@
 @implementation ViewController
 @synthesize videoListDelegate;
 @synthesize videoListTable;
+@synthesize LinkedContentsScope;
 //@synthesize titleLabel, descriptionLabel, durationLabel;
 //@synthesize videoThumbnailImageView;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    
+    [LinkedContentsScope addTarget:self
+                         action:@selector(linkedContentsScopeChanged)
+               forControlEvents:UIControlEventValueChanged];
     
     /*
     self.videoListDelegate = [[VideoListDelegate alloc] initWithMode:1];
@@ -55,7 +61,22 @@
     [self.videoListTable setDelegate: self.videoListDelegate];
     [self.videoListTable setDataSource:self.videoListDelegate];
     
+    NSLog(@"View: %@", [self.view.subviews[0] restorationIdentifier]);
+
+    
     [self.view.subviews[0] reloadData];
 
 }
+
+
+- (void) linkedContentsScopeChanged{
+    NSLog(@"Selector changed");
+    self.videoListDelegate = [[VideoListDelegate alloc] initWithMode:1];
+    
+    self.videoListDelegate.packageID = @"code.google.com.epub-samples.moby-dick-basic";
+    
+        [self.view.subviews[0] reloadData];
+    
+}
+
 @end

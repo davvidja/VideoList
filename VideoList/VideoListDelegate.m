@@ -30,6 +30,9 @@
     
     //self.videoListCellContent = [[VideoListCellContent alloc] initWithVideoURL:path title:title author:author duration:duration];
     
+    self.mode = -1;
+    self.userScope = -1;
+    
     return self;
 }
 
@@ -67,6 +70,16 @@
             NSLog(@"No starting mode selected. VideoList will be empty");
             break;
     }
+    
+    return self;
+}
+
+
+- (id)initWithMode: (int)mode userScope: (int)userScope {
+    
+    self = [self initWithMode:mode];
+    
+    self.userScope = userScope;
     
     return self;
 }
