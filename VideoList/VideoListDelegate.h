@@ -28,6 +28,7 @@
 @property UIImageView *videoThumbnailImageView;
 @property NSMutableArray *linkedContentList;
 @property NSString *packageID;
+@property int mode;
 
 //- (id) initWithImageView: (UIImageView *)imageView title:(UILabel *)title description:(UILabel *)description duration:(UILabel *)duration;
 
