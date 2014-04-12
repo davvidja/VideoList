@@ -5,41 +5,41 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>99FDC382-8AD0-4730-BE76-28A1012F7C64</string>
+	<string>89FA2FDC-B923-438E-8751-B68446B6FCDF</string>
 	<key>IDESourceControlProjectName</key>
 	<string>VideoList</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>20DCE634-3B3C-4F86-973C-0C489A42381A</key>
-		<string>http://gtm-oauth2.googlecode.com/svn/trunk/Source</string>
+		<key>067236B3-13D2-42DB-A6EA-5C65C7388580</key>
+		<string>http://gtm-http-fetcher.googlecode.com/svn/trunk/Source</string>
 		<key>34B8CDB3-8D38-4543-9589-D8372000ABF2</key>
 		<string>https://github.com/davvidja/VideoList.git</string>
-		<key>5BC4B9F4-A902-47CC-93C8-356BD68DF438</key>
+		<key>4093B771-83C6-4244-A54A-9491722FAF59</key>
+		<string>http://gtm-oauth2.googlecode.com/svn/trunk/Source</string>
+		<key>BEC20B8C-DD29-44F8-8EE3-D9D24D4FB53E</key>
 		<string>http://google-api-objectivec-client.googlecode.com/svn/trunk</string>
-		<key>B0E95059-EECD-42F6-ABF2-B9300811D69E</key>
-		<string>http://gtm-http-fetcher.googlecode.com/svn/trunk/Source</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>VideoList.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>20DCE634-3B3C-4F86-973C-0C489A42381A</key>
-		<string>../../../../google-api-objectivec-client-read-only/Source/OAuth2</string>
+		<key>067236B3-13D2-42DB-A6EA-5C65C7388580</key>
+		<string>../../../../google-api-objectivec-client-read-only/Source/HTTPFetcher</string>
 		<key>34B8CDB3-8D38-4543-9589-D8372000ABF2</key>
 		<string>../..</string>
-		<key>5BC4B9F4-A902-47CC-93C8-356BD68DF438</key>
+		<key>4093B771-83C6-4244-A54A-9491722FAF59</key>
+		<string>../../../../google-api-objectivec-client-read-only/Source/OAuth2</string>
+		<key>BEC20B8C-DD29-44F8-8EE3-D9D24D4FB53E</key>
 		<string>../../../../google-api-objectivec-client-read-only</string>
-		<key>B0E95059-EECD-42F6-ABF2-B9300811D69E</key>
-		<string>../../../../google-api-objectivec-client-read-only/Source/HTTPFetcher</string>
 	</dict>
 	<key>IDESourceControlProjectRepositoryRootDictionary</key>
 	<dict>
-		<key>20DCE634-3B3C-4F86-973C-0C489A42381A</key>
-		<string>http://gtm-oauth2.googlecode.com/svn</string>
-		<key>5BC4B9F4-A902-47CC-93C8-356BD68DF438</key>
-		<string>http://google-api-objectivec-client.googlecode.com/svn</string>
-		<key>B0E95059-EECD-42F6-ABF2-B9300811D69E</key>
+		<key>067236B3-13D2-42DB-A6EA-5C65C7388580</key>
 		<string>http://gtm-http-fetcher.googlecode.com/svn</string>
+		<key>4093B771-83C6-4244-A54A-9491722FAF59</key>
+		<string>http://gtm-oauth2.googlecode.com/svn</string>
+		<key>BEC20B8C-DD29-44F8-8EE3-D9D24D4FB53E</key>
+		<string>http://google-api-objectivec-client.googlecode.com/svn</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/davvidja/VideoList.git</string>
@@ -50,10 +50,16 @@
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
+			<key>IDESourceControlRepositoryBranchesRelativeLocationKey</key>
+			<string>branches</string>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.subversion</string>
+			<key>IDESourceControlRepositoryTagsRelativeLocationKey</key>
+			<string>tags</string>
+			<key>IDESourceControlRepositoryTrunkRelativeLocationKey</key>
+			<string>trunk</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>5BC4B9F4-A902-47CC-93C8-356BD68DF438</string>
+			<string>BEC20B8C-DD29-44F8-8EE3-D9D24D4FB53E</string>
 			<key>IDESourceControlWCCName</key>
 			<string>google-api-objectivec-client-read-only</string>
 		</dict>
@@ -67,17 +73,21 @@
 			<key>IDESourceControlRepositoryTrunkRelativeLocationKey</key>
 			<string>trunk</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>B0E95059-EECD-42F6-ABF2-B9300811D69E</string>
+			<string>067236B3-13D2-42DB-A6EA-5C65C7388580</string>
 			<key>IDESourceControlWCCName</key>
 			<string>HTTPFetcher</string>
 		</dict>
 		<dict>
+			<key>IDESourceControlRepositoryBranchesRelativeLocationKey</key>
+			<string>branches</string>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.subversion</string>
+			<key>IDESourceControlRepositoryTagsRelativeLocationKey</key>
+			<string>tags</string>
 			<key>IDESourceControlRepositoryTrunkRelativeLocationKey</key>
 			<string>trunk</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>20DCE634-3B3C-4F86-973C-0C489A42381A</string>
+			<string>4093B771-83C6-4244-A54A-9491722FAF59</string>
 			<key>IDESourceControlWCCName</key>
 			<string>OAuth2</string>
 		</dict>
