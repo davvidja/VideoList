@@ -36,6 +36,7 @@
     GTLQueryYouTube *query = [GTLQueryYouTube queryForSearchListWithPart:@"snippet"];
     query.q = @"La Sagrada Familia";
     query.type = @"video";
+    query.videoEmbeddable = @"true";
     query.safeSearch = @"strict";
     query.videoDimension = @"2d";
     query.maxResults = 10;
@@ -55,17 +56,12 @@
                                                NSLog(@"Video: https://www.youtube.com/v/%@?version=3&f=videos&app=youtube_gdata",[[item.JSON objectForKey:@"id"] objectForKey:@"videoId"]);
                                                NSLog(@"Title: %@",[[item.JSON objectForKey:@"snippet"] objectForKey:@"title"]);
                                                NSLog(@"thumbnails: %@",[[[[item.JSON objectForKey:@"snippet"] objectForKey:@"thumbnails"] objectForKey:@"medium"] objectForKey:@"url"]);
-                                               
-                                               //NSLog(@"Title:%@",[item.JSON objectForKey:@"snippet"]);
-                                               
-                                               
-                                               
                                            }
 
                                        }
                                    }];
     
-    NSLog(@"Service ticket has the status Code: %d",[ticket statusCode]);
+   
     
     
     /*
