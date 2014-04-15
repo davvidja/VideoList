@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "VideoListDelegate.h"
-#import "GTLYouTube.h"
+#import "AppDelegate.h"
+
 
 
 @interface ViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UITextField *inputQuery;
 @property (weak, nonatomic) IBOutlet UITableView *videoListTable;
 @property (strong,nonatomic) VideoListDelegate *videoListDelegate;
 /*

@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
+#import "GTLYouTube.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) GTLServiceYouTube *service;
 
 @end

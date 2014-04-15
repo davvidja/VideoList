@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface LinkedContent : NSObject {
+    @private NSString *m_objectID;
 	@private NSString *m_packageID;
 	@private NSString *m_ISBN;
 	@private NSString *m_packageModificationDate;
@@ -31,7 +32,7 @@
 @private int m_likeStatus;
 
 
-@private NSString *m_objectID;
+
 }
 
 @property (nonatomic, readonly) NSString *objectID;

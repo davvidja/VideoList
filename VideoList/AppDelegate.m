@@ -22,7 +22,20 @@
     
     NSLog (@"Parse initialized");
     
-    
+    // The following code is intended to setup the app to work with YouTube service
+    if(!_service)
+    {
+        // Create a service object for executing queries
+        GTLServiceYouTube *youTubeService = [[GTLServiceYouTube alloc]init];
+        self.service = youTubeService;
+        // This services do not require sign-in the API key is from the
+        // API Console developer account
+        youTubeService.APIKey = @"AIzaSyDQZOVtBYHAv-8CXSZZo0-JDUAt3gjSfzg";
+        // Enable fetches to continue in the background on iOS
+        youTubeService.shouldFetchInBackground = YES;
+        NSLog (@"YouTube service initialized");
+    }
+  
     return YES;
 }
 
