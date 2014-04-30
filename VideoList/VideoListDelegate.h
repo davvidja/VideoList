@@ -28,9 +28,14 @@
 @property UIImageView *videoThumbnailImageView;
 @property NSMutableArray *linkedContentList;
 @property NSString *packageID;
+@property int mode;
+@property int userScope;
 
 //- (id) initWithImageView: (UIImageView *)imageView title:(UILabel *)title description:(UILabel *)description duration:(UILabel *)duration;
 
 - (id)initWithMode: (int)mode;
+
+- (id)initWithMode: (int)mode userScope: (int)userScope;
+
 
 @end

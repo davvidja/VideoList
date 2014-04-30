@@ -12,6 +12,7 @@
 
 
 @interface ViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UISegmentedControl *LinkedContentsScope;
 @property (weak, nonatomic) IBOutlet UITableView *videoListTable;
 @property (strong,nonatomic) VideoListDelegate *videoListDelegate;
 /*
@@ -22,4 +23,5 @@
 */
 - (IBAction)YouTube:(id)sender;
 - (IBAction)Parse:(id)sender;
+- (void) linkedContentsScopeChanged;
 @end
