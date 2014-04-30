@@ -24,7 +24,7 @@
 {
     [super viewDidLoad];
     
-<<<<<<< HEAD
+
     // Create a service object for executing queries
     GTLServiceYouTube *service = [[GTLServiceYouTube alloc]init];
     
@@ -65,12 +65,12 @@
     
    
     
-=======
+
     
     [LinkedContentsScope addTarget:self
                          action:@selector(linkedContentsScopeChanged)
                forControlEvents:UIControlEventValueChanged];
->>>>>>> 77d56be9eaa2880080bcde968aa2d794974bf88a
+
     
     /*
     self.videoListDelegate = [[VideoListDelegate alloc] initWithMode:1];
